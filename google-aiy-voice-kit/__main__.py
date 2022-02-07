@@ -39,10 +39,7 @@ def main():
             board.led.state = Led.OFF
 
             try:
-                reco = r.recognize_google(audio, language="ja-JP")
-                talk_text = reco.split(" ")
-                say = talk_text[0]
-
+                say = cmd._command_setting(r.recognize_google(audio, language="ja-JP"))
                 print(f"認識結果: {say}")
 
                 """
