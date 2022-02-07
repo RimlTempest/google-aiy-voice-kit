@@ -1,3 +1,4 @@
+import os
 import subprocess
 import requests, json
 import base.base_command as BaseCommand
@@ -67,8 +68,8 @@ class Command(BaseCommand.BaseCommand):
         ボットをONにする
         """
         # パラメーター（要書き換え）
-        DEVICEID = "SwitchBotのデバイスID"
-        ACCESS_TOKEN = "開発者トークン"
+        DEVICEID = os.getenv("DEVICE_ID") or ""
+        ACCESS_TOKEN = os.getenv("SWITCHBOT_ACCESS_TOKEN") or ""
         API_BASE_URL = "https://api.switch-bot.com"
 
         self._led_on()
