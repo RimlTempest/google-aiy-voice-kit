@@ -23,19 +23,22 @@ Google AIY Voice Kitとは自作でAIスピーカーを作ってみよう！と�
                 [baseについて](./google-aiy-voice-kit/libs/base/README.md)
     - config  
         [configについて](./config/README.md)
-    - logs
+    - logs  
         [logsについて](./logs/README.md)
-    - tests
+    - tests  
         [testsについて](./tests/README.md)
-    - libs
+    - libs  
         [libsについて](./libs/README.md)
-    - docs
+    - docs  
         [docsについて](./docs/README.md)
+    - setup  
+        こちらは環境構築に必要なファイル等が格納されています。  
+        [setupについて](./setup/README.md)
 
 ## 内部構造
 
 Google AIY Voice KitはGCPの`SpeechToText`を使う前提の製品ですが、こちらを使ってしまうと数アクションを行うだけでお金がかかってしまいます。  
-そのため今回は音声認識ライブラリの`SpeechRecognition`を利用して`SpeechToText`のような動作を実現しております。　　
+そのため今回は音声認識ライブラリの`SpeechRecognition`を利用して`SpeechToText`のような動作を実現しております。  
 そして他にもGoogle AIY Voice Kitの読み上げ機能が日本語対応していないという問題もあります。  
 こちらに関しては`Open JTalk`というテキスト音声合成システムを利用して、日本語対応しております。  
 
