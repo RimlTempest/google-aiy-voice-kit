@@ -9,7 +9,7 @@ class Logging:
     def __init__(self):
         # 文字起こしファイルのファイル名を日付のtxtファイルとする
         self.filename: str = datetime.now().strftime("%Y%m%d_%H:%M:%S")
-        self.txt_path: str = f"../logs/{self.filename}.txt"
+        self.txt_path: str = f"./logs/{self.filename}.txt"
 
         # ログファイル作成
         with open(self.txt_path, "w+") as f:
