@@ -28,6 +28,7 @@ def main():
             done = threading.Event()
             board.button.when_pressed = done.set
             board.led.state = Led.ON
+            cmd.message("なんでしょうか？")
 
             with mic as source:
                 # ノイズ対策
@@ -42,7 +43,7 @@ def main():
                 talk_text = reco.split(" ")
                 say = talk_text[0]
 
-                print(f"認識結果: {talk_text}")
+                print(f"認識結果: {say}")
 
                 """
                 コマンドはここに追加する
