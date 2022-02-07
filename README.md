@@ -44,6 +44,11 @@ Google AIY Voice KitはGCPの`SpeechToText`を使う前提の製品ですが、�
 
 ## 実行方法
 
+導入は以下ディレクトリ内で行ってください。  
+```bash
+$ cd AIY-voice-kit-python/src
+```
+
 導入  
 ```bash
 $ git clone https://github.com/RimlTempest/google-aiy-voice-kit.git
