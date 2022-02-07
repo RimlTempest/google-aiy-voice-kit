@@ -39,7 +39,7 @@ def main():
 
             try:
                 reco = r.recognize_google(audio, language="ja-JP")
-                talk_text = reco.encode("utf-8").split(" ")
+                talk_text = reco.split(" ")
                 say = talk_text[0]
 
                 print(f"認識結果: {talk_text}")
