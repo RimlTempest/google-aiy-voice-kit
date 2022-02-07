@@ -12,7 +12,7 @@ class Logging:
         self.txt_path: str = f"../logs/{self.filename}.txt"
 
         # ログファイル作成
-        with open(self.txt_path, "w") as f:
+        with open(self.txt_path, "w+") as f:
             f.write(self.filename + "\n")
 
     def write(self, message):
