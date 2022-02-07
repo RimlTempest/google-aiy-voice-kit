@@ -59,6 +59,10 @@ def main():
                     cmd.now_volume()
                 elif say == "ミュート":
                     cmd.mute()
+                elif say == "ボットオン":
+                    cmd.switch_bot(True)
+                elif say == "ボットオフ":
+                    cmd.switch_bot(False)
                 else:
                     cmd.message(say)
 

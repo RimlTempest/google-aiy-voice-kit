@@ -1,6 +1,5 @@
 import subprocess
-import aiy.jtalk as talk
-
+import requests, json
 import base.base_command as BaseCommand
 
 
@@ -61,4 +60,33 @@ class Command(BaseCommand.BaseCommand):
         self._led_on()
         self._talk("ミュートまたはミュート解除しました")
         subprocess.run(["amixer", "sset", "Master", "on"])
+        self._led_off()
+
+    def switch_bot(self, command=True):
+        """
+        ボットをONにする
+        """
+        # パラメーター（要書き換え）
+        DEVICEID = "SwitchBotのデバイスID"
+        ACCESS_TOKEN = "開発者トークン"
+        API_BASE_URL = "https://api.switch-bot.com"
+
+        self._led_on()
+        if command:
+            set_switch = "turnOn"
+            status = "オン"
+        else:
+            set_switch = "turnOff"
+            status = "オフ"
+
+        headers = {
+            "Content-Type": "application/json; charset: utf8",
+            "Authorization": ACCESS_TOKEN,
+        }
+        url = API_BASE_URL + "/v1.0/devices/" + DEVICEID + "/commands"
+        body = {"command": set_switch, "parameter": "default", "commandType": "command"}
+        data = json.dumps(body)
+        res = requests.post(url, data=data, headers=headers)
+        print(res)
+        self._talk(f"ボットを{status}にしました")
         self._led_off()
