@@ -59,9 +59,9 @@ def main():
                     cmd.now_volume()
                 elif say == "ミュート":
                     cmd.mute()
-                elif say == "ボットオン":
+                elif say == "電気つけて" or say == "電気付けて":
                     cmd.switch_bot(True)
-                elif say == "ボットオフ":
+                elif say == "電気けして" or say == "電気消して":
                     cmd.switch_bot(False)
                 else:
                     cmd.message(say)
